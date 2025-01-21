@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Resultado</title>
+</head>
+<body>
+    <h2>Resultado</h2>
+    <p>Has obtenido <span th:text="${puntuacion}"></span> de <span th:text="${total}"></span> preguntas correctas.</p>
+    <a th:href="@{/quiz}">Volver a empezar</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+	<head><title>Formulario</title></head>
+	<body>
+		
+		<h2>Formulario Enviado</h2>
+		
+		<ul>
+			<li>Nombre:<div th:text="${persona.nombre}"></div></li>
+			<li>Edad:<div th:text="${persona.edad}"></div> <div th:if="${persona.edad} > 18">Eres mayor de edad</div></li>
+			Aficiones:
+			<ul>
+							
+				<li th:each="aficion : ${persona.aficiones}" th:text="${aficion}"></li>
+							
+			</ul>
+			
+			<li>Estudios:<div th:text="${persona.estudios}"></div></li>	
+		</ul>
+			
+	</body>
+</html>
