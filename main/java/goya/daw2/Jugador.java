@@ -4,14 +4,14 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "players")
+@Table(name = "jugadores")
 public class Jugador {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String nombre;
 
     @OneToMany(mappedBy = "jugador", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -22,8 +22,9 @@ public class Jugador {
 
     public Jugador() {}
 
-    public Jugador(String nombre) {
+    public Jugador(String nombre, String casa) {
         this.nombre = nombre;
+        this.casa = casa;
     }
 
     public Long getId() {

@@ -1,9 +1,5 @@
 package goya.daw2;
 
-import goya.daw2.Jugador;
-import goya.daw2.Puntuacion;
-import goya.daw2.JugadorService;
-import goya.daw2.PuntuacionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -115,10 +111,9 @@ public class QuizController {
             nombre = "Usuario Anónimo";
         }
 
-        // Obtener o crear el jugador
-        Jugador jugador = jugadorService.obtenerOCrearJugador(nombre);
+        Jugador jugador = jugadorService.obtenerOCrearJugador(nombre, casa);
 
-        // Crear y guardar puntuación
+
         Puntuacion nuevaPuntuacion = new Puntuacion(jugador, casa, max);
         puntuacionService.guardarPuntuacion(nuevaPuntuacion);
 
@@ -130,16 +125,28 @@ public class QuizController {
     }
 
     @GetMapping("/puntuaciones")
-    public String listarPuntuaciones(@RequestParam(value = "nombre", required = false) String jugadorNombre, Model modelo) {
-        if (jugadorNombre != null && !jugadorNombre.trim().isEmpty()) {
-            Jugador jugador = jugadorService.obtenerOCrearJugador(jugadorNombre);
-            List<Puntuacion> puntuaciones = puntuacionService.obtenerPuntuacionesPorJugador(jugador.getId());
-
-            modelo.addAttribute("puntuaciones", puntuaciones);
-            modelo.addAttribute("jugadorNombre", jugador.getNombre());
+    public String listarPuntuaciones(
+            @RequestParam(value = "nombre", required = false) String jugadorNombre, 
+            Model modelo) {
+        if (org.springframework.util.StringUtils.hasText(jugadorNombre)) {
+            try {
+                Jugador jugador = jugadorService.obtenerOCrearJugador(jugadorNombre, "Sin asignar");
+                
+                List<Puntuacion> puntuaciones = puntuacionService.obtenerPuntuacionesPorJugador(jugador.getId());
+                
+                if (puntuaciones.isEmpty()) {
+                    modelo.addAttribute("mensaje", "No se encontraron puntuaciones para el jugador: " + jugadorNombre);
+                } else {
+                    modelo.addAttribute("puntuaciones", puntuaciones);
+                    modelo.addAttribute("jugadorNombre", jugador.getNombre());
+                }
+            } catch (Exception e) {
+                modelo.addAttribute("mensaje", "Error al buscar las puntuaciones: " + e.getMessage());
+            }
         } else {
-            modelo.addAttribute("mensaje", "Por favor, ingresa un nombre para buscar puntuaciones.");
+            modelo.addAttribute("mensaje", "Por favor, pon un nombre para buscar puntuaciones.");
         }
+
         return "puntuaciones";
     }
 

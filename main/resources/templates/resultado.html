@@ -10,7 +10,7 @@
     <h2 th:text="${casa}">Gryffindor</h2>
 
     <div>
-        <img th:src="@{'/img/' + ${casa} + '.png'}" alt="Imagen de la casa [[${casa}]]">
+        <img style="width: 300px; height: 300px;" th:src="@{'/img/' + ${casa} + '.png'}" alt="Imagen de la casa [[${casa}]]">
     </div>
 
     <p th:text="${descripcion}">Descripción de la casa.</p>
