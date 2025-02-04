@@ -1,0 +1,21 @@
+<html>
+	<head><title>Productos</title></head>
+	<body>
+		
+		<form method="POST" action="/guardar" th:object="${producto}">
+			
+			<label for="nombre">Nombre:</label>
+			<input type="text" th:field="*{nombre}"><br>
+			
+			<label for="nombre">Precio:</label>
+			<input type="text" th:field="*{precio}"><br>
+			
+			<label for="nombre">Cantidad:</label>
+			<input type="text" th:field="*{cantidad}"><br>
+			
+			<input type="submit" value="Guardar">
+			
+		</form>
+		
+	</body>
+</html>
