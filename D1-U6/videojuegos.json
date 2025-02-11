@@ -1,0 +1,74 @@
+{
+  "videojuegos": [
+    {
+      "id": "2",
+      "nombre": "Mismatch Game",
+      "plataforma": "PC",
+      "desarrollador": "Mismatch Dev",
+      "anio": 2023
+    },
+    {
+      "id": "3",
+      "nombre": "Beyond Good & Evil",
+      "plataforma": "PS2, Xbox, GameCube",
+      "desarrollador": "Ubisoft",
+      "anio": 2003
+    },
+    {
+      "id": "4",
+      "nombre": "The Elder Scrolls V: Skyrim",
+      "plataforma": "PS3, Xbox 360, PC, PS4, Xbox One, Switch, PS5, Xbox Series X/S",
+      "desarrollador": "Bethesda Game Studios",
+      "anio": 2011
+    },
+    {
+      "id": "5",
+      "nombre": "Shadow of the Colossus",
+      "plataforma": "PS2, PS3, PS4",
+      "desarrollador": "Team Ico",
+      "anio": 2005
+    },
+    {
+      "id": "6",
+      "nombre": "Dark Souls",
+      "plataforma": "PS3, Xbox 360, PC",
+      "desarrollador": "FromSoftware",
+      "anio": 2011
+    },
+    {
+      "id": "7",
+      "nombre": "Horizon Zero Dawn",
+      "plataforma": "PS4, PC",
+      "desarrollador": "Guerrilla Games",
+      "anio": 2017
+    },
+    {
+      "id": "8",
+      "nombre": "The Witcher 3: Wild Hunt",
+      "plataforma": "PS4, Xbox One, PC, Switch",
+      "desarrollador": "CD Projekt Red",
+      "anio": 2015
+    },
+    {
+      "id": "9",
+      "nombre": "Fable",
+      "plataforma": "Xbox, PC",
+      "desarrollador": "Lionhead Studios",
+      "anio": 2004
+    },
+    {
+      "id": "10",
+      "nombre": "Prince of Persia: The Sands of Time",
+      "plataforma": "PS2, Xbox, GameCube, PC",
+      "desarrollador": "Ubisoft",
+      "anio": 2003
+    },
+    {
+      "id": "a280",
+      "nombre": "Minecraft",
+      "plataforma": "PC",
+      "desarrollador": "Mojang",
+      "anio": 2008
+    }
+  ]
+}
