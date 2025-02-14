@@ -1,0 +1,13 @@
+package goya.daw2;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class PracticandoApirestMySql3Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(PracticandoApirestMySql3Application.class, args);
+	}
+
+}
