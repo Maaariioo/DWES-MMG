@@ -1,0 +1,22 @@
+[
+    {
+        "nombre": "Juan Perez",
+        "email": "juan@example.com",
+        "password": "$2y$10$EjemploDeHash"
+    },
+    {
+        "nombre": "Ana Gomez",
+        "email": "ana@example.com",
+        "password": "$2y$10$OtroEjemploDeHash"
+    },
+    {
+        "nombre": "Mario",
+        "email": "mario@gmail.com",
+        "password": "$2y$10$Mnmdw4izEK0IaakWfERhTehZLxa17BiiNuH9dr1qz2aOPL8RNTP36"
+    },
+    {
+        "nombre": "Javi",
+        "email": "javier@gmail.com",
+        "password": "$2y$10$kDlpCbjyWUCwasCJdzFlwuImUXiBNzMs2GOt.kVJw2HL7djqavAbS"
+    }
+]
