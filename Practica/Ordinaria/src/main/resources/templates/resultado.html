@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados</title>
+</head>
+<body>
+    <h1>Resultado del Examen</h1>
+    <h2>Usuario: <span th:text="${nombre}"></span></h2>
+
+    <h3>Puntuación: <span th:text="${puntuacion}"></span> / 10</h3>
+
+    <h3>Respuestas:</h3>
+    <div th:each="pregunta, i : ${preguntas}">
+        <p th:text="${pregunta.texto}"></p>
+        <p>Tu respuesta: <span th:text="${pregunta.opciones[respuestas[i.index] != null ? respuestas[i.index] : 0]}"></span></p>
+        <p>Respuesta correcta: <span th:text="${pregunta.opciones[pregunta.correcta]}"></span></p>
+        <hr>
+    </div>
+
+    <a href="/">Volver al inicio</a>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head><title>Inicio del Examen</title></head>	
+<body>
+	
+	<form th:action="@{/preguntas}" th:object="${usuario}" method="POST">
+		
+		<label for="nombre">Nombre:</label>
+		<input type="text" th:field="*{nombre}" placeholder="Escribe tu nombre"/><br>
+		<div th:if="${#fields.hasErrors('nombre')}" style="color: red;">
+			<div th:errors="*{nombre}"></div>
+		</div><br>
+		
+		<input type="submit" value="Siguiente"/>
+		
+	</form>
+	
+</body>
+</html>

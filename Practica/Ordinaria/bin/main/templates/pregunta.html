@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pregunta</title>
+</head>
+<body>
+    <h1>Bienvenido <span th:text="${nombre}"></span></h1>
+    <h2 th:text="${pregunta.texto}"></h2>
+
+    <form th:action="@{/siguiente}" th:object="${respuesta}" method="POST">
+        <div th:each="opcion, j : ${pregunta.opciones}">
+            <input type="radio" th:field="*{pregunta1}" th:value="${j.index}">
+            <label th:text="${opcion}"></label><br>
+        </div>
+		
+		<div th:if="${#fields.hasErrors('pregunta1')}" style="color: red;">
+			<span th:errors="*{pregunta1}"></span>
+		</div>
+        
+        <button type="submit">Siguiente</button>
+    </form>
+</body>
+</html>
